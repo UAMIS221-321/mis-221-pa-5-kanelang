@@ -1,0 +1,15 @@
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\obj\Debug\net6.0\mis-221-pa-5-kanelang.csproj.AssemblyReference.cache
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\obj\Debug\net6.0\mis-221-pa-5-kanelang.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\obj\Debug\net6.0\mis-221-pa-5-kanelang.AssemblyInfoInputs.cache
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\obj\Debug\net6.0\mis-221-pa-5-kanelang.AssemblyInfo.cs
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\obj\Debug\net6.0\mis-221-pa-5-kanelang.csproj.CoreCompileInputs.cache
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\bin\Debug\net6.0\mis-221-pa-5-kanelang.exe
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\bin\Debug\net6.0\mis-221-pa-5-kanelang.deps.json
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\bin\Debug\net6.0\mis-221-pa-5-kanelang.runtimeconfig.json
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\bin\Debug\net6.0\mis-221-pa-5-kanelang.dll
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\bin\Debug\net6.0\mis-221-pa-5-kanelang.pdb
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\obj\Debug\net6.0\mis-221-pa-5-kanelang.dll
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\obj\Debug\net6.0\refint\mis-221-pa-5-kanelang.dll
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\obj\Debug\net6.0\mis-221-pa-5-kanelang.pdb
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\obj\Debug\net6.0\mis-221-pa-5-kanelang.genruntimeconfig.cache
+C:\Users\charl\OneDrive\Desktop\MIS 221\repos\mis-221-pa-5-kanelang\obj\Debug\net6.0\ref\mis-221-pa-5-kanelang.dll
