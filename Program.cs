@@ -204,7 +204,7 @@ public class Program{
 
     while (true)
     {
-        // Display sub-menu
+        // Display Manage Listing Data Menu
         Console.Clear();
         string title = @"
 ╔═╗╔═╗                          ╔╗          ╔╗               ╔═══╗      ╔╗      
@@ -310,7 +310,7 @@ static void ManageBookingData(Booking[] bookings)
 
     while (true)
     {
-        // Display sub-menu
+        // Display Manage Customer Booking Data Menu
         Console.Clear();
         string title = @"
 ╔═╗╔═╗                          ╔═══╗         ╔╗                
@@ -399,7 +399,7 @@ static void RunReports(Report[] reports)
 {
     while (true)
     {
-        // Display sub-menu
+        // Display Run Reports Menu
         Console.Clear();
         string title = @"
 ╔═══╗            ╔═══╗                ╔╗     

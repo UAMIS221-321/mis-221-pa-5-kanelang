@@ -7,7 +7,7 @@ namespace mis_221_pa_5_kanelang
         public ListingUtility(Listing[] listings) {
             this.listings = listings;
         }
-        public void AddListing() {
+        public void AddListing() {    // add a listing
             System.Console.WriteLine("Please enter the Listing ID:");
             Listing myListing = new Listing();
             myListing.SetListingId(int.Parse(Console.ReadLine()));
@@ -33,7 +33,7 @@ namespace mis_221_pa_5_kanelang
             SaveListings();
         }
 
-        private void SaveListings() {
+        private void SaveListings() {      // save method
             StreamWriter outFile = new StreamWriter("listings.txt");
 
             for(int i = 0; i < Listing.GetCount(); i++) {
@@ -44,28 +44,33 @@ namespace mis_221_pa_5_kanelang
 
         }
 
-        public void DeleteListing() 
+        public void DeleteListing()       // delete a listing
         {
-            // Prompt user to enter listing ID to delete
-            Console.WriteLine("Enter the ID of the listing you would like to delete:");
-            int deleteListing = int.Parse(Console.ReadLine());
+            System.Console.WriteLine("Enter the ID of the Listing you would like to Delete:");
+            int searchVal = int.Parse(Console.ReadLine());
+            int foundIndex = Find(searchVal);
 
-            // Loop through listings array to find listing to delete
-            for (int i = 0; i < listings.Length; i++) {
-                if (listings[i].GetListingId() == deleteListing) {
-                    // Found the listing to delete
-                    Console.WriteLine($"Deleting listing with ID {deleteListing}...");
-                    listings[i] = null;
-                    SaveListings();
-                    return;
-                }
+            if(foundIndex != -1){
+                listings[foundIndex].Delete();
+                SaveListings();
             }
-
-            // Listing not found
-            Console.WriteLine($"Listing with ID {deleteListing} not found.");
+            else{
+                System.Console.WriteLine("The Listing ID is invalid");
+            }
         }
 
-        public void EditListing()
+        public int Find(int searchVal){     // find method
+            for(int i =0; i < Listing.GetCount(); i++){
+                if(listings[i].GetListingId() == searchVal){
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+       
+
+        public void EditListing()     // edit a listing
         {
             // Get trainer ID from user
             Console.Write("Enter the ID of the trainer to edit: ");
@@ -131,14 +136,14 @@ namespace mis_221_pa_5_kanelang
             }
         }
 
-        public void GetAllListingsFromFile() {
+        public void GetAllListingsFromFile() {     // get listings from listings file
             StreamReader listingFile = new StreamReader("listings.txt");
 
             Listing.SetCount(0);
             string line = listingFile.ReadLine();
             while(line != null) {
                 string[] temp = line.Split('#');
-                listings[Listing.GetCount()] = new Listing(int.Parse(temp[0]), temp[1], temp[2], temp[3], temp[4], temp[5]);
+                listings[Listing.GetCount()] = new Listing(int.Parse(temp[0]), temp[1], temp[2], temp[3], temp[4], temp[5], bool.Parse(temp[6]));
                 Listing.IncCount();
                 line = listingFile.ReadLine();
             }

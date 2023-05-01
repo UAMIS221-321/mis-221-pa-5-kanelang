@@ -10,17 +10,19 @@ namespace mis_221_pa_5_kanelang
 
         static private int count;
 
-        public Trainer() {
+        public Trainer() {   // no arg constructor
 
         }
 
-        public Trainer(int trainerId, string trainerName, string mailingAddress, string trainerEmailAddress) {
+        public Trainer(int trainerId, string trainerName, string mailingAddress, string trainerEmailAddress, bool isDeleted) {  // constructor
             this.trainerId = trainerId;
             this.trainerName = trainerName;
             this.mailingAddress = mailingAddress;
             this.trainerEmailAddress = trainerEmailAddress;
+            this.isDeleted = isDeleted;
         }
-
+        
+        // getters and setters:
         public void SetTrainerId(int trainerId) {
             this.trainerId = trainerId;
         }
@@ -69,17 +71,17 @@ namespace mis_221_pa_5_kanelang
             return Trainer.count;
         }
 
-        public override string ToString()
+        public override string ToString()  // to string method
         {
-            return $"TRAINER ID: {this.trainerId}       TRAINER EMAIL:{this.trainerEmailAddress}        TRAINER NAME:{this.trainerName}         TRAINER ADDRESS:{this.mailingAddress}";
+            return $"TRAINER ID: {this.trainerId}       TRAINER EMAIL:{this.trainerEmailAddress}        TRAINER NAME:{this.trainerName}         TRAINER ADDRESS:{this.mailingAddress}       Is Deleted:{this.isDeleted}";
         }
 
-         public string ToFile()
+         public string ToFile()    // file method
         {
-            return $"{trainerId}#{trainerName}#{mailingAddress}#{trainerEmailAddress}";
+            return $"{trainerId}#{trainerName}#{mailingAddress}#{trainerEmailAddress}#{isDeleted}";
         }
 
-        public void Delete(){
+        public void Delete(){      // delete method
             isDeleted = !isDeleted;
         }
 

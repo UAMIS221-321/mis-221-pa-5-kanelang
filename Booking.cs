@@ -12,12 +12,12 @@ namespace mis_221_pa_5_kanelang
 
         static private int count;
 
-        public Booking()
+        public Booking()   // no arg constructor
         {
 
         }
 
-        public Booking(int sessionId, string customerName, string customerEmail, string trainingDate, int trainerId, string trainerName, string sessionStatus)
+        public Booking(int sessionId, string customerName, string customerEmail, string trainingDate, int trainerId, string trainerName, string sessionStatus)  // constructor
         {
             this.sessionId = sessionId;
             this.customerName = customerName;
@@ -39,6 +39,7 @@ namespace mis_221_pa_5_kanelang
             this.sessionStatus = bookingData[6];
         }
 
+        // getters and setters:
         public void SetSessionId(int sessionId)
         {
             this.sessionId = sessionId;
@@ -124,14 +125,16 @@ namespace mis_221_pa_5_kanelang
             return Booking.count;
         }
 
-        public override string ToString()
+        public override string ToString()    // to string method
         {
             return $"SESSION ID:{this.sessionId}        CUSTOMER NAME:{this.customerName}       CUSTOMER EMAIL:{this.customerEmail}     TRAINING DATE:{this.trainingDate}       TRAINER ID:{this.trainerId}     TRAINER NAME:{this.trainerName}     SESSION STATUS:{this.sessionStatus}";
         }
 
-        public string ToFile()
+        public string ToFile()    // file method
         {
             return $"{sessionId}#{customerName}#{customerEmail}#{trainingDate}#{trainerId}#{trainerName}#{sessionStatus}";
         }
+
+        
     }
 }

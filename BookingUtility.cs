@@ -7,9 +7,19 @@ namespace mis_221_pa_5_kanelang
         public BookingUtility(Booking[] bookings) {
             this.bookings = bookings;
         }
+
+        public int GetNextSessionId() {     // get next id
+            int maxSessionId = 0;
+            foreach (Booking booking in bookings) {
+                if (booking != null && booking.GetSessionId() > maxSessionId) {
+                    maxSessionId = booking.GetSessionId();
+                }
+            }
+            return maxSessionId + 1;
+        }
         
 
-        public void ViewAvailableSessions()
+        public void ViewAvailableSessions()    // view the current sessions
         {
             System.Console.WriteLine("Enter R to return");
             string userInput = Console.ReadLine();
@@ -19,17 +29,78 @@ namespace mis_221_pa_5_kanelang
             }
         }
 
-        public void BookSession()
+        public void BookSession()     // book a new session
         {
-            
+            Console.WriteLine("Enter customer name: ");
+            string customerName = Console.ReadLine();
+
+            Console.WriteLine("Enter customer email: ");
+            string customerEmail = Console.ReadLine();
+
+            Console.WriteLine("Enter training date (dd/mm/yyyy): ");
+            string trainingDate = Console.ReadLine();
+
+            Console.WriteLine("Enter trainer ID: ");
+            int trainerId = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter trainer name: ");
+            string trainerName = Console.ReadLine();
+
+            string sessionStatus = "Booked";
+
+            int sessionId = GetNextSessionId();
+            Booking booking = new Booking(sessionId, customerName, customerEmail, trainingDate, trainerId, trainerName, sessionStatus);
+            Array.Resize(ref bookings, bookings.Length + 1);
+            bookings[bookings.Length - 1] = booking;
+
+            Console.WriteLine($"Session {sessionId} has been booked for {customerName} on {trainingDate}.");
         }
 
-        public void UpdateSessionStatus()
+        public void UpdateSessionStatus()      // update session status
         {
+            Console.WriteLine("Enter session ID to update: ");
+            int sessionId = int.Parse(Console.ReadLine());
             
+
+            bool sessionFound = false;
+            foreach (Booking booking in bookings)
+            {
+                if (booking.GetSessionId() == sessionId)
+                {
+                    Console.WriteLine("Enter new session status (Booked, Attended, Cancelled, Rescheduled): ");
+                    string newStatus = Console.ReadLine();
+
+                    booking.SetSessionStatus(newStatus);
+                    Console.WriteLine($"Session {sessionId} status updated to {newStatus}.");
+                    sessionFound = true;
+                    break;
+                }
+            }
+
+            if (!sessionFound)
+            {
+                Console.WriteLine($"Session {sessionId} not found.");
+            }
+            
+
+            SaveBookings();
         }
 
-        public void GetAllTransactionsFromFile() {
+        private void SaveBookings() {    // save method
+            StreamWriter outFile = new StreamWriter("transactions.txt");
+
+            for(int i = 0; i < Booking.GetCount(); i++) {
+                outFile.WriteLine(bookings[i].ToFile());
+            }
+
+            outFile.Close();
+
+        }
+
+
+        
+
+        public void GetAllTransactionsFromFile() {     // get transactions from file
             StreamReader inFile = new StreamReader("transactions.txt");
 
             Booking.SetCount(0);
@@ -42,5 +113,9 @@ namespace mis_221_pa_5_kanelang
             }
             inFile.Close();
         }
+
+        
+
+
     }
 }

@@ -7,7 +7,7 @@ namespace mis_221_pa_5_kanelang
         public TrainerUtility(Trainer[] trainers) {
             this.trainers = trainers;
         }
-        public void AddTrainer() {
+        public void AddTrainer() {   // Add a Trainer
             System.Console.WriteLine("Please enter the Trainer's name:");
             Trainer myTrainer = new Trainer();
             myTrainer.SetTrainerName(Console.ReadLine());
@@ -24,7 +24,7 @@ namespace mis_221_pa_5_kanelang
             Save();
         }
 
-        private void Save() {
+        private void Save() {   // Save method
             StreamWriter outFile = new StreamWriter("trainers.txt");
 
             for(int i = 0; i < Trainer.GetCount(); i++) {
@@ -35,7 +35,7 @@ namespace mis_221_pa_5_kanelang
 
         }
 
-        public void DeleteTrainer() 
+        public void DeleteTrainer()   // delete a trainer
         {
             System.Console.WriteLine("Enter the ID of the Trainer you would like to Delete:");
             int searchVal = int.Parse(Console.ReadLine());
@@ -50,7 +50,7 @@ namespace mis_221_pa_5_kanelang
             }
         }
 
-        public void EditTrainer()
+        public void EditTrainer()   // edit a trainer
         {
             // Get trainer ID from user
             Console.Write("Enter the ID of the trainer to edit: ");
@@ -109,21 +109,21 @@ namespace mis_221_pa_5_kanelang
 
 
 
-        public void GetAllTrainersFromFile() {
+        public void GetAllTrainersFromFile() {   // get trainers from file
             StreamReader inFile = new StreamReader("trainers.txt");
 
             Trainer.SetCount(0);
             string line = inFile.ReadLine();
             while(line != null) {
                 string[] temp = line.Split('#');
-                trainers[Trainer.GetCount()] = new Trainer(int.Parse(temp[0]), temp[1], temp[2], temp[3]);
+                trainers[Trainer.GetCount()] = new Trainer(int.Parse(temp[0]), temp[1], temp[2], temp[3], bool.Parse(temp[4]));
                 Trainer.IncCount();
                 line = inFile.ReadLine();
             }
             inFile.Close();
         }
 
-        public int Find(int searchVal){
+        public int Find(int searchVal){    // find method
             for(int i =0; i < Trainer.GetCount(); i++){
                 if(trainers[i].GetTrainerId() == searchVal){
                     return i;
