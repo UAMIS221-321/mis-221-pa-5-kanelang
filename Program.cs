@@ -70,10 +70,10 @@ public class Program{
                 ManageBookingData(bookings);
                 break;
                         
-                // case "4":
-                // Console.WriteLine("Run reports selected.");
-                // RunReports(reports, bookings, listings, trainers);
-                // break;
+                case "4":
+                System.Console.WriteLine("Run reports selected.");
+                RunReports(reports);
+                break;
                         
                 case "5":
                 System.Console.WriteLine("Exiting application...");
@@ -158,7 +158,7 @@ public class Program{
 ";
                     System.Console.WriteLine(title);
                     System.Console.WriteLine("Current Trainers:");
-                    System.Console.WriteLine("==========================================================================================================================================================================================");
+                    System.Console.WriteLine("=======================================================================================================================================================================");
                     trainerUtility.GetAllTrainersFromFile();
                     trainerReport.PrintAllTrainers();
                     trainerUtility.EditTrainer();
@@ -167,10 +167,22 @@ public class Program{
 
                 case "3":
                     Console.Clear();
-                    System.Console.WriteLine("Deleting a trainer...");
+                    title = @"
+╔═══╗    ╔╗      ╔╗         ╔════╗                        
+╚╗╔╗║    ║║     ╔╝╚╗        ║╔╗╔╗║                        
+ ║║║║╔══╗║║ ╔══╗╚╗╔╝╔══╗    ╚╝║║╚╝╔═╗╔══╗ ╔╗╔═╗ ╔══╗╔═╗╔═╗
+ ║║║║║╔╗║║║ ║╔╗║ ║║ ║╔╗║      ║║  ║╔╝╚ ╗║ ╠╣║╔╗╗║╔╗║║╔╝╚═╝
+╔╝╚╝║║║═╣║╚╗║║═╣ ║╚╗║║═╣     ╔╝╚╗ ║║ ║╚╝╚╗║║║║║║║║═╣║║ ╔═╗
+╚═══╝╚══╝╚═╝╚══╝ ╚═╝╚══╝     ╚══╝ ╚╝ ╚═══╝╚╝╚╝╚╝╚══╝╚╝ ╚═╝
+                                                          
+                                                          
+";
+                    System.Console.WriteLine(title);
+                    System.Console.WriteLine("Current Trainers:");
+                    System.Console.WriteLine("======================================================================================================================================================================");
                     trainerUtility.GetAllTrainersFromFile();
                     trainerReport.PrintAllTrainers();
-                    // trainerUtility.DeleteTrainer();
+                    trainerUtility.DeleteTrainer();
                     trainerReport.PrintAllTrainers();
                     break;
 
@@ -221,7 +233,19 @@ public class Program{
         switch (userInput)
         {
             case "1":
-                System.Console.WriteLine("Add a new listing");
+                Console.Clear();
+                title = @"
+╔═══╗  ╔╗  ╔╗    ╔╗          ╔╗              
+║╔═╗║  ║║  ║║    ║║         ╔╝╚╗             
+║║ ║║╔═╝║╔═╝║    ║║   ╔╗╔══╗╚╗╔╝╔╗╔═╗ ╔══╗╔═╗
+║╚═╝║║╔╗║║╔╗║    ║║ ╔╗╠╣║══╣ ║║ ╠╣║╔╗╗║╔╗║╚═╝
+║╔═╗║║╚╝║║╚╝║    ║╚═╝║║║╠══║ ║╚╗║║║║║║║╚╝║╔═╗
+╚╝ ╚╝╚══╝╚══╝    ╚═══╝╚╝╚══╝ ╚═╝╚╝╚╝╚╝╚═╗║╚═╝
+                                      ╔═╝║   
+                                      ╚══╝   
+";
+                System.Console.WriteLine(title);
+                System.Console.WriteLine("Current Listings:");
                 listingUtility.GetAllListingsFromFile();
                 listingReport.PrintAllListings();
                 listingUtility.AddListing();
@@ -229,7 +253,19 @@ public class Program{
                 break;
 
             case "2":
-                System.Console.WriteLine("Edit an existing listing");
+                Console.Clear();
+                title = @"
+╔═══╗  ╔╗   ╔╗     ╔╗          ╔╗              
+║╔══╝  ║║  ╔╝╚╗    ║║         ╔╝╚╗             
+║╚══╗╔═╝║╔╗╚╗╔╝    ║║   ╔╗╔══╗╚╗╔╝╔╗╔═╗ ╔══╗╔═╗
+║╔══╝║╔╗║╠╣ ║║     ║║ ╔╗╠╣║══╣ ║║ ╠╣║╔╗╗║╔╗║╚═╝
+║╚══╗║╚╝║║║ ║╚╗    ║╚═╝║║║╠══║ ║╚╗║║║║║║║╚╝║╔═╗
+╚═══╝╚══╝╚╝ ╚═╝    ╚═══╝╚╝╚══╝ ╚═╝╚╝╚╝╚╝╚═╗║╚═╝
+                                        ╔═╝║   
+                                        ╚══╝   
+";
+                System.Console.WriteLine(title);
+                System.Console.WriteLine("Current Listings:");
                 listingUtility.GetAllListingsFromFile();
                 listingReport.PrintAllListings();
                 listingUtility.EditListing();
@@ -237,7 +273,19 @@ public class Program{
                 break;
 
             case "3":
-                System.Console.WriteLine("Delete a listing");
+                Console.Clear();
+                title = @"
+╔═══╗    ╔╗      ╔╗         ╔╗          ╔╗              
+╚╗╔╗║    ║║     ╔╝╚╗        ║║         ╔╝╚╗             
+ ║║║║╔══╗║║ ╔══╗╚╗╔╝╔══╗    ║║   ╔╗╔══╗╚╗╔╝╔╗╔═╗ ╔══╗╔═╗
+ ║║║║║╔╗║║║ ║╔╗║ ║║ ║╔╗║    ║║ ╔╗╠╣║══╣ ║║ ╠╣║╔╗╗║╔╗║╚═╝
+╔╝╚╝║║║═╣║╚╗║║═╣ ║╚╗║║═╣    ║╚═╝║║║╠══║ ║╚╗║║║║║║║╚╝║╔═╗
+╚═══╝╚══╝╚═╝╚══╝ ╚═╝╚══╝    ╚═══╝╚╝╚══╝ ╚═╝╚╝╚╝╚╝╚═╗║╚═╝
+                                                 ╔═╝║   
+                                                 ╚══╝   
+";
+                System.Console.WriteLine(title);
+                System.Console.WriteLine("Current Listings");
                 listingUtility.GetAllListingsFromFile();
                 listingReport.PrintAllListings();
                 listingUtility.DeleteListing();
@@ -258,6 +306,7 @@ public class Program{
 static void ManageBookingData(Booking[] bookings)
     {
        BookingUtility bookingUtility = new BookingUtility(bookings);
+       BookingReport bookingReport = new BookingReport(bookings);
 
     while (true)
     {
@@ -286,33 +335,55 @@ static void ManageBookingData(Booking[] bookings)
         System.Console.WriteLine("Please select one of the options below:");
         System.Console.WriteLine("1. View Training Sessions");
         System.Console.WriteLine("2. Book a training session");
-        System.Console.WriteLine("3. List all bookings");
-        System.Console.WriteLine("4. Return to main menu");
+        System.Console.WriteLine("3. Return to main menu");
         System.Console.WriteLine("===========================");
 
         // Get user choice
-        System.Console.Write("Enter your choice (1-4): ");
+        System.Console.Write("Enter your choice (1-3): ");
         string userInput = Console.ReadLine();
 
         // Process user choice
         switch (userInput)
         {
             case "1":
-                System.Console.WriteLine("Training Sessions:");
+                Console.Clear();
+                title = @"
+╔════╗                            ╔═══╗                             
+║╔╗╔╗║                            ║╔═╗║                             
+╚╝║║╚╝╔═╗╔══╗ ╔╗╔═╗ ╔╗╔═╗ ╔══╗    ║╚══╗╔══╗╔══╗╔══╗╔╗╔══╗╔═╗ ╔══╗╔═╗
+  ║║  ║╔╝╚ ╗║ ╠╣║╔╗╗╠╣║╔╗╗║╔╗║    ╚══╗║║╔╗║║══╣║══╣╠╣║╔╗║║╔╗╗║══╣╚═╝
+ ╔╝╚╗ ║║ ║╚╝╚╗║║║║║║║║║║║║║╚╝║    ║╚═╝║║║═╣╠══║╠══║║║║╚╝║║║║║╠══║╔═╗
+ ╚══╝ ╚╝ ╚═══╝╚╝╚╝╚╝╚╝╚╝╚╝╚═╗║    ╚═══╝╚══╝╚══╝╚══╝╚╝╚══╝╚╝╚╝╚══╝╚═╝
+                          ╔═╝║                                      
+                          ╚══╝                                      
+";
+                System.Console.WriteLine(title);
                 bookingUtility.GetAllTransactionsFromFile();
+                bookingReport.PrintAllTransactions();
+                bookingUtility.ViewAvailableSessions();
+                bookingReport.PrintAllTransactions();
                 break;
 
             case "2":
-                System.Console.WriteLine("Book a training session:");
+                Console.Clear();
+                title = @"
+╔══╗         ╔╗               ╔════╗                            ╔═══╗                         
+║╔╗║         ║║               ║╔╗╔╗║                            ║╔═╗║                         
+║╚╝╚╗╔══╗╔══╗║║╔╗    ╔══╗     ╚╝║║╚╝╔═╗╔══╗ ╔╗╔═╗ ╔╗╔═╗ ╔══╗    ║╚══╗╔══╗╔══╗╔══╗╔╗╔══╗╔═╗ ╔═╗
+║╔═╗║║╔╗║║╔╗║║╚╝╝    ╚ ╗║       ║║  ║╔╝╚ ╗║ ╠╣║╔╗╗╠╣║╔╗╗║╔╗║    ╚══╗║║╔╗║║══╣║══╣╠╣║╔╗║║╔╗╗╚═╝
+║╚═╝║║╚╝║║╚╝║║╔╗╗    ║╚╝╚╗     ╔╝╚╗ ║║ ║╚╝╚╗║║║║║║║║║║║║║╚╝║    ║╚═╝║║║═╣╠══║╠══║║║║╚╝║║║║║╔═╗
+╚═══╝╚══╝╚══╝╚╝╚╝    ╚═══╝     ╚══╝ ╚╝ ╚═══╝╚╝╚╝╚╝╚╝╚╝╚╝╚═╗║    ╚═══╝╚══╝╚══╝╚══╝╚╝╚══╝╚╝╚╝╚═╝
+                                                        ╔═╝║                                  
+                                                        ╚══╝                                  
+";
+                System.Console.WriteLine(title);
+                bookingUtility.GetAllTransactionsFromFile();
+                bookingReport.PrintAllTransactions();
                 bookingUtility.BookSession();
+                bookingReport.PrintAllTransactions();
                 break;
 
             case "3":
-                System.Console.WriteLine("Current Bookings:");
-                bookingUtility.ViewAvailableSessions();
-                break;
-
-            case "4":
                 System.Console.WriteLine("Returning to main menu...");
                 return;
 

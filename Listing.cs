@@ -4,9 +4,9 @@ namespace mis_221_pa_5_kanelang
     {
         private int listingId;
         private string trainerName;
-        private int dateOfSession;
-        private int timeOfSession;
-        private int costOfSession;
+        private string dateOfSession;
+        private string timeOfSession;
+        private string costOfSession;
         private string isListingTaken;
 
         static private int count;
@@ -15,13 +15,13 @@ namespace mis_221_pa_5_kanelang
 
         }
 
-        public Listing(int listingId, string trainerName, int dateOfSession, int timeOfSession, string isListingTaken, int costOfSession) {
+        public Listing(int listingId, string trainerName, string dateOfSession, string timeOfSession, string costOfSession, string isListingTaken) {
             this.listingId = listingId;
             this.trainerName = trainerName;
             this.dateOfSession = dateOfSession;
             this.timeOfSession = timeOfSession;
-            this.isListingTaken = isListingTaken;
             this.costOfSession = costOfSession;
+            this.isListingTaken = isListingTaken;
         }
 
         public void SetListingId(int listingId) {
@@ -40,34 +40,30 @@ namespace mis_221_pa_5_kanelang
             return trainerName;
         }
 
-        public void SetDateOfSession(int dateOfSession) {
+        public void SetDateOfSession(string dateOfSession) {
             this.dateOfSession = dateOfSession;
         }
 
-        public int GetDateOfSession() {
+        public string GetDateOfSession() {
             return dateOfSession;
+        }
+        public void SetTimeOfSession(string timeOfSession) {
+            this.timeOfSession = timeOfSession;        
+        }
+        public string GetTimeOfSession() {
+            return timeOfSession;
+        }
+        public void SetCostOfSession(string costOfSession) {
+            this.costOfSession = costOfSession;        
+        }
+        public string GetCostOfSession() {
+            return costOfSession;
         }
         public void SetIsListingTaken(string isListingTaken) {
             this.isListingTaken = isListingTaken;        
         }
         public string GetIsListingTaken() {
             return isListingTaken;
-        }
-
-        public void SetCostOfSession(int costOfSession) {
-            this.costOfSession = costOfSession;
-        }
-
-        public int GetCostOfSession() {
-            return costOfSession;
-        }
-
-        public void SetTimeOfSession(int timeOfSession) {
-            this.timeOfSession = timeOfSession;
-        }
-
-        public int GetTimeOfSession() {
-            return timeOfSession;
         }
 
         static public void SetCount(int count) {
@@ -84,7 +80,7 @@ namespace mis_221_pa_5_kanelang
 
         public override string ToString()
         {
-            return $"{this.listingId} {this.trainerName} {this.dateOfSession} {this.timeOfSession} {this.costOfSession} {this.isListingTaken}";
+            return $"LISTING ID:{this.listingId}        TRAINER NAME:{this.trainerName}     DATE OF SESSION:{this.dateOfSession}        TIME OF SESSION:{this.timeOfSession}        COST OF SESSION:{this.costOfSession}        IS LISTING TAKEN:{this.isListingTaken} ";
         }
 
          public string ToFile()

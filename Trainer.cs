@@ -6,6 +6,7 @@ namespace mis_221_pa_5_kanelang
         private string trainerName;
         private string mailingAddress;
         private string trainerEmailAddress;
+        private bool isDeleted;
 
         static private int count;
 
@@ -49,6 +50,12 @@ namespace mis_221_pa_5_kanelang
         public string GetTrainerEmailAddress() {
             return trainerEmailAddress;
         }
+        public void SetIsDeleted(bool isDeleted){
+            this.isDeleted = isDeleted;
+        }
+        public bool GetIsDeleted(){
+            return isDeleted;
+        }
 
         static public void SetCount(int count) {
             Trainer.count = count;
@@ -72,9 +79,11 @@ namespace mis_221_pa_5_kanelang
             return $"{trainerId}#{trainerName}#{mailingAddress}#{trainerEmailAddress}";
         }
 
-        // public void Delete(){
-        //     isDeleted = !isDeleted;
-        // }
+        public void Delete(){
+            isDeleted = !isDeleted;
+        }
+
+        
     }
     }
 

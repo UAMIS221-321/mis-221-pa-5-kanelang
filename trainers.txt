@@ -1,5 +1,5 @@
-1#James Smith#123 Bryant Denny Way, Tuscaloosa, AL, 35401#jamessmith@gmail.com
-2#Jane Smith#123 Bryant Denny Way, Tuscaloosa, AL, 35401#janesmith@gmail.com
+1#James Smith#123 Bryant Denny Stadium Way, Tuscaloosa, AL, 35401#jamessmith@gmail.com
+2#Jane Smith#123 Bryant Denny Stadium Way, Tuscaloosa, AL, 35401#janesmith@gmail.com
 3#Greg Williams#180 Nick Saban Dr, Tuscaloosa, AL, 35401#gregwilliams@gmail.com
 4#Katie Nicole#152 Tallwater Blvd, Tuscaloosa, AL, 35401#katienicole@gmail.com
 5#David Rodgers#213 McFarland Blvd, Tuscaloosa, AL, 35401#davidrodgers@gmail.com

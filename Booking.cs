@@ -5,7 +5,7 @@ namespace mis_221_pa_5_kanelang
         private int sessionId;
         private string customerName;
         private string customerEmail;
-        private int trainingDate;
+        private string trainingDate;
         private int trainerId;
         private string trainerName;
         private string sessionStatus;
@@ -17,7 +17,7 @@ namespace mis_221_pa_5_kanelang
 
         }
 
-        public Booking(int sessionId, string customerName, string customerEmail, int trainingDate, int trainerId, string trainerName, string sessionStatus)
+        public Booking(int sessionId, string customerName, string customerEmail, string trainingDate, int trainerId, string trainerName, string sessionStatus)
         {
             this.sessionId = sessionId;
             this.customerName = customerName;
@@ -33,7 +33,7 @@ namespace mis_221_pa_5_kanelang
             this.sessionId = int.Parse(bookingData[0]);
             this.customerName = bookingData[1];
             this.customerEmail = bookingData[2];
-            this.trainingDate = int.Parse(bookingData[3]);
+            this.trainingDate = bookingData[3];
             this.trainerId = int.Parse(bookingData[4]);
             this.trainerName = bookingData[5];
             this.sessionStatus = bookingData[6];
@@ -69,12 +69,12 @@ namespace mis_221_pa_5_kanelang
             return customerEmail;
         }
 
-        public void SetTrainingDate(int trainingDate)
+        public void SetTrainingDate(string trainingDate)
         {
             this.trainingDate = trainingDate;
         }
 
-        public int GetTrainingDate()
+        public string GetTrainingDate()
         {
             return trainingDate;
         }
@@ -126,7 +126,7 @@ namespace mis_221_pa_5_kanelang
 
         public override string ToString()
         {
-            return $"{this.sessionId}{this.customerName}{this.customerEmail}{this.trainingDate}{this.trainerId}{this.trainerName}{this.sessionStatus}";
+            return $"SESSION ID:{this.sessionId}        CUSTOMER NAME:{this.customerName}       CUSTOMER EMAIL:{this.customerEmail}     TRAINING DATE:{this.trainingDate}       TRAINER ID:{this.trainerId}     TRAINER NAME:{this.trainerName}     SESSION STATUS:{this.sessionStatus}";
         }
 
         public string ToFile()

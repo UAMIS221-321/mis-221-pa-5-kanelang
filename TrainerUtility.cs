@@ -35,19 +35,20 @@ namespace mis_221_pa_5_kanelang
 
         }
 
-        // public void DeleteTrainer() 
-        // {
-        //     System.Console.WriteLine("Enter the ID of the Trainer you would like to Delete:");
-        //     int searchVal = int.Parse(Console.ReadLine());
+        public void DeleteTrainer() 
+        {
+            System.Console.WriteLine("Enter the ID of the Trainer you would like to Delete:");
+            int searchVal = int.Parse(Console.ReadLine());
+            int foundIndex = Find(searchVal);
 
-        //     if(foundIndex != -1){
-        //         trainers[foundIndex].Delete();
-        //         Save();
-        //     }
-        //     else{
-        //         System.Console.WriteLine("The Trainer ID is invalid");
-        //     }
-        // }
+            if(foundIndex != -1){
+                trainers[foundIndex].Delete();
+                Save();
+            }
+            else{
+                System.Console.WriteLine("The Trainer ID is invalid");
+            }
+        }
 
         public void EditTrainer()
         {

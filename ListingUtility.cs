@@ -16,13 +16,13 @@ namespace mis_221_pa_5_kanelang
             myListing.SetTrainerName(Console.ReadLine());
 
             System.Console.WriteLine("Please enter the Date of the Session:");
-            myListing.SetDateOfSession(int.Parse(Console.ReadLine()));
+            myListing.SetDateOfSession(Console.ReadLine());
 
             System.Console.WriteLine("Please enter the Time of the Session:");
-            myListing.SetTimeOfSession(int.Parse(Console.ReadLine()));
+            myListing.SetTimeOfSession(Console.ReadLine());
 
             System.Console.WriteLine("Please enter the Cost of the Session:");
-            myListing.SetCostOfSession(int.Parse(Console.ReadLine()));
+            myListing.SetCostOfSession(Console.ReadLine());
 
             System.Console.WriteLine("Please Enter if the Listing is Booked or Open:");
             myListing.SetIsListingTaken(Console.ReadLine());
@@ -93,11 +93,11 @@ namespace mis_221_pa_5_kanelang
                 int listingId = int.Parse(Console.ReadLine());
                 
                 Console.Write("Date of the Session: ");
-                int dateOfSession = int.Parse(Console.ReadLine());
+                string dateOfSession = Console.ReadLine();
                 Console.Write("Time of Session: ");
-                int timeOfSession = int.Parse(Console.ReadLine());
+                string timeOfSession = Console.ReadLine();
                 Console.Write("Cost of Session ");
-                int costOfSession = int.Parse(Console.ReadLine());
+                string costOfSession = Console.ReadLine();
                 
 
                 string trainerName = null;
@@ -138,7 +138,7 @@ namespace mis_221_pa_5_kanelang
             string line = listingFile.ReadLine();
             while(line != null) {
                 string[] temp = line.Split('#');
-                listings[Listing.GetCount()] = new Listing(int.Parse(temp[0]), temp[1], int.Parse(temp[2]), int.Parse(temp[3]), temp[4], int.Parse(temp[5]));
+                listings[Listing.GetCount()] = new Listing(int.Parse(temp[0]), temp[1], temp[2], temp[3], temp[4], temp[5]);
                 Listing.IncCount();
                 line = listingFile.ReadLine();
             }
